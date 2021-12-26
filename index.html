@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body,
+    h1 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body {}
+
+    .container::before {
+        content: "";
+        background-image: url('https://i.pinimg.com/236x/e9/13/bc/e913bc67d4491938c92a6d2bed6e8322.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+        background-position: center;
+        background-size: cover;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        opacity: 0.8;
+        z-index: -1;
+    }
+
+    .container {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .logo img{
+        height: 100px;
+    }
+
+    .coming {
+        font-size: 2rem;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .large {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    footer{
+    text-align: center;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="">
+        </div>
+        <div class="coming">
+            <h1 class="center">COMING SOON</h1>
+            <hr>
+            <p class="center" id="demo"></p>
+        </div>
+    </div>
+    <section class="foot">
+        <div class="large">
+            Powered by <a href="https://www.instagram.com/amsan_cs/" target="_blank">w3.css</a>
+        </div>
+    </section>
+    <footer> Copyright 2021 &copysr; All rights reserved by Amsan </footer>
+</body>
+
+<script>
+    // Set the date we're counting down to
+    let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+    
+    // Update the count down every 1 second
+    let x = setInterval(function() {
+    
+      // Get today's date and time
+      let now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      let distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      let days = Math.floor(distance / (26.2 * 60 * 60 * 24));
+      let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
+</html>
